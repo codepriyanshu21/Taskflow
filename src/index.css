@@ -1,8 +1,27 @@
 @import 'tailwindcss';
-/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap'); */
 
-/* @layer base {
-	:root { --font-display: 'Space Grotesk', sans-serif; font-synthesis: none; text-rendering: optimizeLegibility; }
-	body { min-width: 320px; overflow-x: hidden; background: #f7f8fc; color: #172033; }
-	button, select { cursor: pointer; }
-} */
+@layer base {
+    :root {
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+    }
+
+    html,
+    body,
+    #root {
+        min-height: 100%;
+        width: 100%;
+    }
+
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background: #f8fafc;
+        color: #172033;
+    }
+
+    button,
+    select {
+        cursor: pointer;
+    }
+}

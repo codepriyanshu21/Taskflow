@@ -9,10 +9,10 @@ function App() {
     const taskManager = useTaskManager()
 
     return (
-        <div className="flex min-h-screen bg-slate-50">
+        <div className="flex  min-h-screen bg-slate-50">
             <Sidebar />
 
-            <main className="min-w-0 flex-1 px-4 py-7 sm:px-6 lg:px-8 lg:py-9 xl:px-12">
+            <main className=" flex-1 px-4 py-7 sm:px-6 lg:px-8 lg:py-9 xl:px-12">
                 <Header onNewTask={taskManager.startNewTask} />
                 <SummaryGrid counts={taskManager.counts} />
 
