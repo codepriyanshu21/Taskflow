@@ -1,19 +1,73 @@
-# React + Vite
+# Taskflow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Taskflow is a responsive task management dashboard built with React, Vite, and Tailwind CSS. It supports creating, editing, filtering, sorting, completing, and deleting tasks on desktop, tablet, and mobile layouts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Create, edit, and delete tasks
+- Required title and due-date validation
+- Low, Medium, and High priorities
+- Pending, In Progress, and Completed statuses
+- Search by task title
+- Combined status and priority filters
+- Earliest-first and latest-first due-date sorting
+- Summary counts for total, pending, in-progress, and completed tasks
+- LocalStorage persistence across browser refreshes
+- Responsive empty states and layouts
 
-## React Compiler
+## Requirements
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Node.js 18 or newer
+- npm
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Setup
 
-## Expanding the ESLint configuration
+Clone the repository, open the project directory, and install dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone <repository-url>
+cd task-management
+npm install
+```
+
+## Run Locally
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
+
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server with hot reload |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint checks |
+
+## Project Structure
+
+```text
+src/
+  App.jsx                    Page composition
+  index.css                  Tailwind and global styles
+  components/
+    Header.jsx               Dashboard heading and new-task action
+    Sidebar.jsx              Desktop navigation and user profile
+    SummaryGrid.jsx          Summary card layout
+    SummaryCard.jsx          Individual task count card
+    TaskForm.jsx              Create and edit form
+    TaskPanel.jsx             Task workspace container
+    Filters.jsx               Search, filters, and sorting controls
+    TaskList.jsx              List and empty states
+    TaskRow.jsx               Individual task display and actions
+    useTaskManager.js         Task state, CRUD, validation, and persistence
+```
+
+## Data Persistence
+
+Tasks are stored in the browser's LocalStorage under the key `task-management.tasks`. Clearing site data or using a different browser profile will remove the locally stored tasks.
